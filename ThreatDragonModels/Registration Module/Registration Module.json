@@ -2,7 +2,7 @@
   "version": "2.4.1",
   "summary": {
     "title": "Registration Module",
-    "owner": "Indhu",
+    "owner": "Indhu TR",
     "description": "",
     "id": 0
   },
@@ -690,7 +690,7 @@
       }
     ],
     "diagramTop": 2,
-    "reviewer": "",
+    "reviewer": "SSDLC",
     "threatTop": 5
   }
 }
