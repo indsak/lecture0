@@ -305,7 +305,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "",
+              "name": "Registration details",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -316,40 +316,53 @@
               "protocol": "",
               "threats": [
                 {
-                  "id": "a8899291-2fe7-48b1-9b89-65521e78e0c1",
-                  "title": "Sensitive Data Exposure",
+                  "id": "9e16d89d-4803-41d0-9d1e-0e4a81ffa7fd",
+                  "title": "SQL Injection",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Tampering",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Encryption",
+                  "description": "Attackers could inject malicious SQL commands through the registration form",
+                  "mitigation": "1. Use prepared statements with parameterized queries\n2. Implement input validation on all form fields\n3. Apply the principle of least privilege for database access",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 3,
+                  "number": 4,
+                  "score": ""
+                },
+                {
+                  "id": "050c2d00-c74b-4702-b9dd-ddcb0b132f1e",
+                  "title": "Brute Force Attacks",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Denial of service",
+                  "description": "Attackers could attempt to guess passwords or overwhelm the system",
+                  "mitigation": "1. Implement rate limiting on registration attempts\n2. Require CAPTCHA for repeated submissions\n3. Enforce strong password policies (minimum length, complexity)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 5,
                   "score": ""
                 }
               ],
               "threatFrequency": {
-                "tampering": 1,
+                "tampering": 3,
                 "informationDisclosure": 0,
-                "denialOfService": 0
+                "denialOfService": 1
               }
             },
             "labels": [
-              ""
+              "Registration details"
             ],
-            "id": "422d8041-fd48-4d04-aae1-30a4724f3011",
+            "id": "3fd9b55b-a380-4c28-811f-ef0e422e98eb",
             "source": {
-              "x": 700,
-              "y": 220
+              "x": 213,
+              "y": 235
             },
             "target": {
-              "cell": "239f3e88-2495-4bd6-b171-3c32ae4616e9",
-              "port": "f4128373-f80a-447d-8734-9bc4b6ea6bf3"
+              "x": 580,
+              "y": 220
             },
             "vertices": [
               {
-                "x": 910,
+                "x": 330,
                 "y": 220
               }
             ]
@@ -375,7 +388,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Registration details",
+              "name": "Stored Data",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -386,37 +399,43 @@
               "protocol": "",
               "threats": [
                 {
-                  "id": "9e16d89d-4803-41d0-9d1e-0e4a81ffa7fd",
-                  "title": "SQL Injection",
+                  "id": "a8899291-2fe7-48b1-9b89-65521e78e0c1",
+                  "title": "Sensitive Data Exposure",
                   "status": "Open",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Attackers could inject malicious SQL commands through the registration form",
-                  "mitigation": "1. Use prepared statements with parameterized queries\n2. Implement input validation on all form fields\n3. Apply the principle of least privilege for database access",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Personal data could be exposed in transit or at rest",
+                  "mitigation": "1. Encrypt all sensitive data in transit (TLS) and at rest\n2. Implement proper access controls for the database\n3. Anonymize or pseudonymize data where possible",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 4,
+                  "number": 3,
                   "score": ""
                 }
               ],
               "threatFrequency": {
                 "tampering": 1,
-                "informationDisclosure": 0,
+                "informationDisclosure": 1,
                 "denialOfService": 0
               }
             },
             "labels": [
-              "Registration details"
+              "Stored Data"
             ],
-            "id": "3fd9b55b-a380-4c28-811f-ef0e422e98eb",
+            "id": "422d8041-fd48-4d04-aae1-30a4724f3011",
             "source": {
-              "x": 213,
-              "y": 235
+              "x": 700,
+              "y": 220
             },
             "target": {
-              "x": 313,
-              "y": 335
-            }
+              "cell": "239f3e88-2495-4bd6-b171-3c32ae4616e9",
+              "port": "f4128373-f80a-447d-8734-9bc4b6ea6bf3"
+            },
+            "vertices": [
+              {
+                "x": 910,
+                "y": 220
+              }
+            ]
           },
           {
             "position": {
@@ -665,6 +684,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "",
-    "threatTop": 4
+    "threatTop": 5
   }
 }
