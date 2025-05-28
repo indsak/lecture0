@@ -138,9 +138,9 @@
                   "id": "e88adbb2-3dff-409c-8192-a9fa1bd1f6a3",
                   "title": "Brute Force Attacks",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Spoofing",
-                  "description": "Provide a description for this threat",
+                  "description": "Attackers could attempt to guess passwords or overwhelm the system",
                   "mitigation": "CAPTCHA, Rate Limiting",
                   "modelType": "STRIDE",
                   "new": false,
@@ -149,13 +149,20 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
